@@ -8,6 +8,18 @@ A Python CLI tool for parsing and manipulating FASTA files.
 - **Filter**: Filter FASTA alignments based on missing data in sequences and sites
 - **Aln-stats**: Get statistics from FASTA alignments (number of sequences, alignment length, total bases)
 
+## Prerequisites
+
+This project uses [uv](https://docs.astral.sh/uv/) for dependency management. You need to install `uv` first:
+
+```bash
+# Install uv (recommended method)
+curl -LsSf https://astral.sh/uv/install.sh | sh
+
+# Or using pip
+pip install uv
+```
+
 ## Installation
 
 Using `uv`:
