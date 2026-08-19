@@ -12,10 +12,13 @@ A Python CLI tool for parsing and manipulating FASTA files.
 Using `uv`:
 
 ```bash
-# Install in development mode
+# Regular installation
+uv pip install .
+
+# Install in development mode (editable)
 uv pip install -e .
 
-# Or install with dev dependencies
+# Install with dev dependencies for development
 uv pip install -e ".[dev]"
 ```
 
