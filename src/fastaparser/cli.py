@@ -3,6 +3,7 @@
 import click
 from fastaparser.commands.extract import extract
 from fastaparser.commands.filter import filter
+from fastaparser.commands.aln_stats import aln_stats
 
 
 @click.group()
@@ -18,6 +19,7 @@ def cli():
 # Register subcommands
 cli.add_command(extract)
 cli.add_command(filter)
+cli.add_command(aln_stats)
 
 
 def main():

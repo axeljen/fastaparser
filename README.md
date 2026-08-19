@@ -6,6 +6,7 @@ A Python CLI tool for parsing and manipulating FASTA files.
 
 - **Extract**: Extract sequences from FASTA files using coordinates, GFF annotations, or BED regions
 - **Filter**: Filter FASTA alignments based on missing data in sequences and sites
+- **Aln-stats**: Get statistics from FASTA alignments (number of sequences, alignment length, total bases)
 
 ## Installation
 
@@ -13,6 +14,8 @@ Using `uv`:
 
 ```bash
 # Regular installation
+git clone https://github.com/axeljen/fastaparser
+cd fastaparser
 uv pip install .
 
 # Install in development mode (editable)
@@ -80,6 +83,28 @@ fastaparser filter -i alignment.fa --max-missing-seq 0.3
 - `-o, --output`: Output FASTA file (default: stdout)
 - `--max-missing-seq`: Maximum proportion of missing data for a sequence to be retained (0.0-1.0)
 - `--max-missing-site`: Maximum proportion of missing data for a site/column to be retained (0.0-1.0)
+
+### Get alignment statistics
+
+Get statistics from a FASTA alignment file:
+
+```bash
+# Get alignment statistics
+fastaparser aln-stats -i alignment.fa
+```
+
+**Output:**
+```
+Number of sequences: 11
+Alignment length: 1000
+Total bases: 11000
+```
+
+**Error handling:** Exits with an error if sequences have different lengths (i.e., not a proper alignment).
+
+#### Options
+
+- `-i, --input`: Input FASTA alignment file (required)
 
 ## Development
 
